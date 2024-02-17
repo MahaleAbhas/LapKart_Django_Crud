@@ -1,0 +1,17 @@
+{% extends 'temp/Layout.html' %}
+
+{% block contain %}
+<form method="post">
+    {% csrf_token %}
+    <br>
+    <input type="text" name="un" placeholder="Enter UserName"><br><br>
+    <input type="password" name="pw" placeholder="Enter Password"><br><br>
+    {% if messages %}
+    {% for msg in messages %}
+    <p style="color:red ">{{msg}}</p>
+    {% endfor %}
+    {% endif %}
+    <input type="submit">
+
+</form>
+{% endblock %}

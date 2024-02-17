@@ -1,0 +1,35 @@
+{% extends 'temp/Layout.html' %}
+{% block contain %}
+    <table class="table table-striped">
+        <tr>
+            <th>COMPANY</th>
+            <th>MODEL</th>
+            <th>RAM</th>
+            <th>ROM</th>
+            <th>PRICES</th>
+            <th>UPDATES</th>
+            <th>DELETES</th>
+        </tr>
+
+        {% for all in All_Show %}
+        <tr>
+            <td>{{ all.company }}</td>
+            <td>{{ all.model }}</td>
+            <td>{{ all.ram }}</td>
+            <td>{{ all.rom }}</td>
+            <td>{{ all.prices }}</td>
+            <td>
+                <a href="/golap/update/{{ all.id }}/">
+                    <button>UPDATES</button>
+                </a>
+            </td>
+            <td>
+                <a href="/golap/delete/{{ all.id }}/">
+                    <button>DELETES</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
